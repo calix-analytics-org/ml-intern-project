@@ -1,0 +1,16 @@
+# For more information on how to configure this file, please see:
+# https://docs.getdbt.com/docs/profile
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: calix
+      user: user.lastname@calix.com
+      authenticator: externalbrowser
+      role: dbt_developer
+      database: dbt_dev_mnemonic
+      warehouse: dbt_wh
+      schema: dbt_mnemonic
+      threads: 4
+      client_session_keep_alive: False
