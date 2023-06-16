@@ -1,7 +1,6 @@
-*.csv
-*.png
-profiles.yml
+
 target/
-dbt_modules/
 dbt_packages/
 logs/
+.user.yml
+profiles.yml
