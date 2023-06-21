@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: EDW_CE
+    database: ANALYTICS
+    tables:
+      - name: COMMUNITY_ACTIVITY

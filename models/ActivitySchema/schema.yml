@@ -1,0 +1,16 @@
+
+version: 2
+
+models:
+  - name: calix_community
+    description: "Responsible for bringing community activities to the Activity Schema"
+    columns:
+      - name: activity
+        description: "The name of the activity"
+        tests:
+          - not_null
+      - name: activity_id
+        description: "Unique identifier for an activity"
+        tests:
+          - unique
+          - not null
