@@ -24,4 +24,4 @@ final as (
   
 )
 
-select * from {{ make_activity('final') }} as ActivitySchema
+select * from {{ make_activity('final') }}

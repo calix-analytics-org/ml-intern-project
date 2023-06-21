@@ -7,6 +7,6 @@ calix_community as(
 
     select * from {{ref('calix_community')}}
 
-),
+)
 
-select * from calix_community
+select * from calix_community order by ts asc
