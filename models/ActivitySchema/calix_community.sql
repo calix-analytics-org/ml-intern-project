@@ -8,20 +8,28 @@ source as(
 
 ),
 
+account as(
+
+    select ACCOUNT_ID, ACCOUNT_ORACLE_ID from {{ source('EDW_CE', 'ACCOUNT') }}
+    
+),
+
 final as (
 
   select 
-    ID as activity_id,
-    CREATED_DATE as ts,
+    CONCAT('CC', s.ID) as activity_id,
+    s.CREATED_DATE as ts,
 
-    CONCAT(ENTITY_TYPE, '_CC') as activity,
+    CONCAT(s.ENTITY_TYPE, '_CC') as activity,
 
-    ACCOUNT_ID as customer,
+    a.ACCOUNT_ORACLE_ID as customer,
 
-    TOPIC_NAME as subject
+    s.TOPIC_NAME as subject
 
-  from source WHERE CREATED_DATE BETWEEN '2022-01-01' AND '2022-12-31' 
+  from source s 
+
+  LEFT JOIN account a ON s.ACCOUNT_ID = a.ACCOUNT_ID
   
 )
 
-select * from {{ make_activity('final') }}
+select * from {{ make_activity('final') }} WHERE customer IS NOT NULL
