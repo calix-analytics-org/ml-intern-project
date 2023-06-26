@@ -17,8 +17,8 @@ account as(
 final as (
 
   select 
-    CONCAT('CC', s.ID) as activity_id,
-    s.CREATED_DATE as ts,
+    concat('CC_', row_number() OVER (ORDER BY s.ID)) as activity_id,
+    to_date(s.CREATED_DATE) as ts,
 
     CONCAT(s.ENTITY_TYPE, '_CC') as activity,
 
