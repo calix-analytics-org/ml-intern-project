@@ -32,6 +32,4 @@ final as (
   
 )
 
-select * from {{ make_activity('final') }} 
-
-{# WHERE customer IS NOT NULL #}
+select * from {{ make_activity('final') }} WHERE customer IS NOT NULL

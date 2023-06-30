@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: DBT_NMATHUR
+    database: DBT_DEV_NMATHUR
+    tables:
+      - name: ACTIVITY_SCHEMA

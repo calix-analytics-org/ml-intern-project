@@ -1,0 +1,16 @@
+
+version: 2
+
+models:
+  - name: 2022-23_activities
+    description: "All Calix Community and GS deployment activities from 2022-23"
+    columns:
+      - name: activity
+        description: "The name of the activity"
+        tests:
+          - not_null
+      - name: activity_id
+        description: "Unique identifier for an activity"
+        tests:
+          - unique
+          - not null
