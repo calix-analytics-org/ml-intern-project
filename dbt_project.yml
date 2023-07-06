@@ -36,3 +36,15 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+vars:
+  dbt_activity_schema:
+    included_columns:
+      - activity
+      - activity_id
+      - ts
+      - customer
+      - feature_json
+      - activity_occurrence
+      - activity_repeated_at
+    column_mappings: {}
