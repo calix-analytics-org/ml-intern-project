@@ -5,3 +5,4 @@ sources:
     database: DBT_DEV_NMATHUR
     tables:
       - name: ACTIVITY_SCHEMA
+      - name: ACTIVITIES_2022_23
