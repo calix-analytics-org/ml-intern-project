@@ -3,7 +3,7 @@
 with 
 
 dataset_cte as (
-    {{ dbt_activity_schema.dataset(
+    {{dbt_activity_schema.dataset(
         activity_stream = ref("activities_2022_23"),
 
         primary_activity = dbt_activity_schema.activity(
@@ -12,7 +12,7 @@ dataset_cte as (
         appended_activities = [
           dbt_activity_schema.activity(
               dbt_activity_schema.aggregate_in_between(), "gs_deployment"),
-        ]
+        ] 
     ) }}
 ),
 
